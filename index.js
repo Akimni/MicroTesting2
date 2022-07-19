@@ -1,18 +1,17 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
-const db = require('./queries')
-const port = 3000
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const db = require('./queries');
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
-)
+);
 
 app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
-})
+  response.json({ info: 'Node.js, Express, and Postgres API' });
+});
 
-app.get('/users', db.getUsers)
+app.get('/users', db.getUsers);
