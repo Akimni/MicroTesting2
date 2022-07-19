@@ -1,3 +1,4 @@
+const express = require('express');
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'qekmfhbqusidva',
@@ -5,6 +6,9 @@ const pool = new Pool({
   database: 'dd29m58g7a4tda',
   password: '22cff620d0b06f17950d4f4669a1e0f11f168c04053c0a218b1d83ee130fddb9',
 })
+
+const app = express();
+app.use(cors());
 
 app.get('/displayaccount', (req, res) => {
   /*var micro_username = req.query.username;
